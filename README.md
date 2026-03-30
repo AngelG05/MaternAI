@@ -46,8 +46,7 @@ npm install
 npm run dev
 ```
 
-## 🌍 Impact
+## Impact
 MaternAI directly addresses **SDG 3.1** (Reduce maternal mortality). It is designed to run on solar-capable edge hardware (4W power draw), making it deployable in clinics with no stable power or high-speed connectivity.
 
 ---
-*Built for CppCon 2026. Sponsored by the belief that nanosecond engineering can save lives.*
