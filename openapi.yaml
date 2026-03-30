@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  title: MaternAI Edge Engine API
+  version: 1.0.0
+  description: High-performance API for real-time physiological signal telemetry and HFT-style risk monitoring.
+
+paths:
+  /health:
+    get:
+      summary: System health check
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: operational }
+                  engine: { type: string, example: maternai-high-perf }
+
+  /api/v1/metrics:
+    get:
+      summary: Real-time engine telemetry
+      responses:
+        '200':
+          description: System metrics JSON
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  throughput: { type: integer, description: "Physiological events per second" }
+                  latency_us: { type: number, description: "P99 scoring latency in microseconds" }
+                  critical_alerts: { type: integer, description: "Total high-risk interventions" }
+                  active_monitors: { type: integer, description: "Total edge nodes in grid" }
+
+  /api/v1/stream:
+    get:
+      summary: Real-time Vitals SSE Stream
+      description: High-frequency push-based streaming of patient vitals and risk scores via Server-Sent Events.
+      responses:
+        '200':
+          description: SSE Event Stream
+          content:
+            text/event-stream:
+              schema:
+                type: string
+
+components:
+  schemas:
+    VitalsFrame:
+      type: object
+      properties:
+        patient_id: { type: integer }
+        heart_rate: { type: number }
+        spo2: { type: number }
+        fetal_heart_rate: { type: number }
+        risk_score: { type: number }
+        status: { type: string, enum: [STABLE, OBSERVATION, URGENT, CRITICAL] }

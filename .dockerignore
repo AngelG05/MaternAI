@@ -1,0 +1,24 @@
+# Build artifacts
+build/
+bin/
+dist/
+node_modules/
+.npm/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project files
+.git/
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Environment
+.env
+.env.local
+.env.*.local

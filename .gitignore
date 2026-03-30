@@ -1,0 +1,38 @@
+# --- C++ ---
+build/
+bin/
+*.o
+*.obj
+*.exe
+*.a
+*.lib
+*.so
+*.dll
+*.app
+.cache/
+compile_commands.json
+.clang-format
+.clang-tidy
+
+# --- Node / React ---
+node_modules/
+.npm/
+dist/
+build-frontend/
+.env.local
+.env.*.local
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# --- Docker ---
+Dockerfile.local
+docker-compose.override.yml
